@@ -2,7 +2,18 @@
 /* 套了bootstrap，就不用寫reset */
 /* 要注意:套別人的東西，要注意有沒有繼承權重的問題(!important>id>class>tag>全域*) */
 
-
+/* 共用玻璃擬態樣式 */
+.glassmorphism {
+    border: 1px solid var(--alpha-4);
+    /* background-color: var(--alpha-5); */
+    background-image: linear-gradient(45deg,var(--alpha-4),var(--alpha-5));
+    /* 若套到表單欄位上，則取消欄位預設背景顏色 */
+    backdrop-filter: blur(3px);/* 原色須有透明度才看的到後面的背景濾淨效果 */
+    /* filter:drop-shadow(2px 2px 2px var(--bg-4));整個背影都有陰影，沒有展開效果 */
+    box-shadow: 1px 1px 2px 1px var(--alpha-5), inset -1px -1px 2px 1px rgba(255,255,255,.1);
+    /* 只有外框有陰影，還有展開效果 */
+    /* box-shadow:inset -2px -2px 3px 1px var(--alpha-5); */
+}
 /* navbar */
 .navbar {
     width: 100%;
@@ -13,6 +24,9 @@
     z-index: 999;
     box-shadow: 2px 2px 2px 2px rgba(0,0,0,.1);
     background-color: transparent;
+}
+#MEW-logo{
+    width: 200px;
 }
 .navbar a {
     width: 100px;
@@ -51,6 +65,125 @@ img {
     --bs-bg-opacity: 1;
     background-color: #ffffff30; 
 }
+/* 漢堡按鈕 */
+@media (min-width:641px){
+    .hamburger, #banner_m_01, #banner_m_02, #banner_m_03, #banner_m_04{
+        display: none;
+    }
+}
+
+@media (max-width:640px) {
+    /* 手機版選單列樣式 */
+
+    #MEW-logo{
+        width: 100px;
+        align-items: center;
+    }
+    #banner_01, #banner_02, #banner_03, #banner_04 {
+        display: none;
+    }
+    /* 漢堡選單 */
+    .hamburger {
+        margin-bottom: 10px;
+        /*  修改button預設樣式  */ 
+        background-color: transparent;
+        border: none;
+        float: right;
+    }
+    
+    .bar {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background-color: #333;
+        margin: 5px auto;
+        transition: 0.35s;
+    }
+
+    /* 三 變換為 X */
+    .hamburger.is-active .bar:nth-child(1){
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.is-active .bar:nth-child(2){
+        opacity: 0;
+    }
+
+    .hamburger.is-active .bar:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    #navbarSupportedContent {
+        display: none;/* 一開始不顯示 */
+        position: absolute;
+        right: 15px;
+        top: 50px;
+        border-radius: 20px;
+        animation: hide 0.35s both;
+    }
+
+    @keyframes hide {
+        from{
+            opacity: 1; display: flex;
+        }
+        to{
+            opacity: 0; display: none;
+        }
+    }
+
+    #navbarSupportedContent.show {
+        display: flex;/* 沿用display: flex;才會顯示 */
+        animation: show 0.35s both;
+    } 
+
+    @keyframes show {
+        from{
+            opacity: 0;
+        }
+        to{
+            opacity: 1;
+        }
+    }
+    .navbar-nav {
+        width: auto;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 20px;
+
+        /* 取消玻璃擬態效果 */
+        border: none;
+        background: none;
+        backdrop-filter:none;
+        box-shadow: none;
+
+        /* 在有display:flex，可以改變排練順序 */
+        order: -1;
+    }
+
+    /* .navbar-nav a {
+        font-weight: bold;
+    } */
+    .navbar {
+        width: 100%;
+    }
+    .carousel-item img {
+        width: 100vh;
+    }
+    #banner_01 {
+        src: url(../images/banner_m/banner_m_01.svg);
+    }
+    #banner_02 {
+        src: url(../images/banner_m/banner_m_02.svg);
+    }
+    #banner_03 {
+        src: url(../images/banner_m/banner_m_03.svg);
+    }
+    #banner_04 {
+        src: url(../images/banner_m/banner_m_04.svg);
+    }
+
+}
+
 /* 共同 */
 section {
     margin: 40px;
@@ -205,7 +338,11 @@ h4 {
 /* 關於我們區 */
 .map {
     margin-top: 10px;
-    
+    width: 100%;
+}
+iframe {
+    width: 100%;
+    height: 100%;
 }
 .about .shop-name {
     display: flex;
@@ -220,6 +357,16 @@ h4 {
     font-size: .8rem;
     color: #333;
 }
+@media (max-width:640px) {
+    #about .container {
+        display: flex;
+        flex-direction: column;
+    }
+    .map {
+        margin-bottom: 20px;
+    }
+
+}
 
 /* footer頁尾區 */
 small {
@@ -231,17 +378,26 @@ small {
     color: #222;
 }
 
+@media (max-width:640px) {
+    small  {
+        margin: 10px 40px;
+        text-align: center;
+    }
+    
+
+}
+
 #goTop {
     width: 50px;
     height: 50px;
-    background-color:var(--scrollbar4) ;
+    background-color: #b1850080;
     border-radius: 50%;
 
     position: fixed;
     right: 20px;
     bottom: 20px;
     z-index: 99;
-    color: rgb(60, 47, 1);
+    color: white;
     font-size: 2rem;
     line-height: 50px;
     text-align: center;
