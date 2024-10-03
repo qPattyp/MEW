@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEW 艾妙咪</title>
+    <link rel="icon" href="favicon.ico"><!-- 系統會自動抓，可以不寫，所以一般會省略，除非儲存位置改變 -->
+    <!-- SEO關鍵字優化 -->
+    <meta name="description" content="網⾴簡述">
+    <meta name="keywords" content="網⾴關鍵字">
+    <!-- Open Graph Protocol開放圖形協議(社群常用設定) -->
+    <meta property="og:locale" content="zh-hant-tw" />
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="網⾴標題">
+    <meta property="og:description" content="分享⽂章描述">
+    <meta property="og:site_name" content="網站名稱">
+    <meta property="og:url" content="http://yourURL">
+    <meta property="og:image" content="yourCover.jpg">
+    <meta property="og:image" content="yourImage.png">
+
+    <!-- bootstrap css CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- jquery ui CDN tab -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.3/themes/base/jquery-ui.css">
+    <!-- lightbox css (有改過圖片檔案路徑) -->
+    <link rel="stylesheet" href="./css/lightbox.min.css">
+    <!-- 自訂的css或js要在最下面，權重最重 -->
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body id="index">
+    <!-- bootstrap 導覽列 -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid"><!-- container-fluid:滿版的容器，沒有斷點。container:則有斷點 -->
+            <!-- LOGO品牌名稱區  -->
+            <a class="navbar-brand" href="index.html" style="width: 200px;"><img  src="./images/MEW logo.svg" alt="MEW logo"></a><!-- 直接將文字換成logo的圖片 --><!-- alt就算不想寫，也不能刪除!SEO會扣很多分 -->
+            <!-- 漢堡按鈕 -->
+            <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button> -->
+            <!-- 主要選單 -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <!-- 主選單按鈕 -->
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <!-- 首頁按鈕 -->
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">最新消息</a>
+                    </li>
+                    <!-- 分頁按鈕 -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="#product">系列商品</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#order">訂購表單</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">關於我們</a>
+                    </li>
+                </ul>
+                <!-- 搜尋表單 -->
+                <!-- <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder=" " aria-label="Search">
+                    <button class="btn btn-outline-dark" type="submit" style=" width: 5rem;">Search</button>
+                </form> -->
+            </div>
+        </div>
+    </nav>
+
+    <!-- 最新消息BANNER區 -->
+    <!-- bootstrap 換圖輪播 -->
+    <!-- id class給bootsrap -->
+    <!-- data控制js -->
+    <!-- aria-無障礙相關 -->
+    <!-- data-bs-ride="true":需要手動按一下，"carousel":自動輪播 -->
+    <!-- data-bs-pause="hover"滑鼠經過的時候，輪播會暫停。false則不會停(不須引號) -->
+    <header id="carouselExampleCaptions" class="carousel slide carousel-fade"  data-bs-ride="carousel" data-bs-pause="false" data-bs-interval="3500" >
+        <!-- 圖片輪播提示器 -->
+        <div class="carousel-indicators"><!-- class="active"都會在第一個區塊，js會控制它，會自動往下跳第二個、第三個... -->
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+        </div>
+        <!-- 所有輪播圖區塊 -->
+        <div class="carousel-inner">
+            <!-- 第一張輪播圖區 -->
+            <div class="carousel-item active">
+                <!-- 第一張圖片 -->
+                <img src="./images/banner/banner01.svg" class="d-block" alt="...">
+                <!-- 第一張文字區 -->
+                <!-- <div class="carousel-caption d-none d-md-block">
+                    <h5>Taipei 101</h5>
+                    <p>Taipei 101 is a world-renowned skyscraper and iconic landmark in Taiwan.</p>
+                    <div class="Welcome-to-Taiwan">
+                        <h2>Welcome to </h2><br>
+                        <h1>Taiwan</h1>
+                        <a href="https://eng.taiwan.net.tw/">
+                            <p>Taiwan Official Travel Guide</p>
+                        </a>
+                    </div>
+                </div> -->
+            </div>
+            <!-- 第二張輪播圖區 -->
+            <div class="carousel-item">
+                <!-- 第二張圖片 -->
+                <img src="./images/banner/banner02.svg" class="d-block" alt="...">
+                <!-- 第二張文字區 -->
+                <!-- <div class="carousel-caption d-none d-md-block">
+                    <h5>The Grand Hotel Taipei</h5>
+                    <p>The Grand Hotel Taipei is a historic and luxurious hotel with traditional Chinese architecture.</p>
+                </div> -->
+            </div>
+            <!-- 第三張輪播圖區 -->
+            <div class="carousel-item">
+                <!-- 第三張圖片 -->
+                <img src="./images/banner/banner03.svg" class="d-block" alt="...">
+                <!-- 第三張文字區 -->
+                <!-- <div class="carousel-caption d-none d-md-block">
+                    <h5>The Chiang Kai-shek Memorial Hall</h5>
+                    <p>The Chiang Kai-shek Memorial Hall is a grand monument in Taipei honoring Taiwan's former leader.</p>
+                </div> -->
+            </div>
+            <!-- 第四張輪播圖區 -->
+            <div class="carousel-item">
+                <!-- 第四張圖片 -->
+                <img src="./images/banner/banner04.svg" class="d-block" alt="...">
+                <!-- 第四張文字區 -->
+                <!-- <div class="carousel-caption d-none d-md-block">
+                    <h5>Longshan Temple</h5>
+                    <p>Longshan Temple is a historic and spiritual landmark in Taipei, known for its traditional architecture.</p>
+                </div> -->
+            </div>
+        </div>
+        <!-- 切換按鈕 -->
+        <!-- 上一張按鈕 -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <!-- 下一張按鈕 -->
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </header>
+
+    <!-- 系列商品區 -->
+    <section id="product" class="product">
+        <h2>系列商品</h2>
+        <div class="product-cat container">
+            <div class="row">
+                <div class="product-item col card m-3 p-0  border-white smoove" data-move-y="100px" data-move-x="-50%">
+                    <a href="#"><figure><img src="./images/product_01_hanna powder.svg" alt=""></figure></a>
+                    <h4 class="card-title">天然草本指甲花粉</h4>
+                </div>
+                <div class="product-item col card m-3 p-0  border-white  smoove" data-move-y="100px" data-move-x="-25%">
+                    <a href="#"><figure><img src="./images/product_02_tea.svg" alt=""></figure></a>
+                    <h4 class="card-title">野生斯拉夫茶</h4>
+                </div>
+                <div class="product-item col card m-3 p-0  border-white  smoove" data-move-y="100px" data-move-x="25%">
+                    <a href="#"><figure><img src="./images/product_03_essential oil.svg" alt=""></figure></a>
+                    <h4 class="card-title">100%天然植物精油</h4>
+                </div>
+                <div class="product-item col card m-3 p-0  border-white  smoove" data-move-y="100px" data-move-x="50%">
+                    <a href="#"><figure><img src="./images/product_04_extract oil.svg" alt=""></figure></a>
+                    <h4 class="card-title">100%天然植物原精</h4>
+                </div>
+            </div>
+            <div class="row">
+                <div class="product-item col card m-3 p-0  border-white smoove" data-move-y="100px" data-move-x="-50%">
+                    <a href="#"><figure><img src="./images/product_05_Attar oil.svg" alt=""></figure></a>
+                    <h4>1 class="card-title"00%天然印度Attar精油</h4>
+                </div>
+                <div class="product-item col card m-3 p-0  border-white smoove" data-move-y="100px" data-move-x="-25%">
+                    <a href="#"><figure><img src="./images/product_06_aromatic extract.svg" alt=""></figure></a>
+                    <h4 class="card-title">100%天然芳香提取物(酵素法)</h4>
+                </div>
+                <div class="product-item col card m-3 p-0  border-white smoove" data-move-y="100px" data-move-x="25%">
+                    <a href="#"><figure><img src="./images/product_07_Carrier Oil.svg" alt=""></figure></a>
+                    <h4 class="card-title">100%天然未精製基底油/植物油</h4>
+                </div>
+                <div class="product-item col card m-3 p-0  border-white smoove" data-move-y="100px" data-move-x="50%">
+                    <a href="#"><figure><img src="./images/product_08_Macerated Oil.svg" alt=""></figure></a>
+                    <h4 class="card-title">100%天然野生植物油/浸漬油</h4>
+                </div>
+            </div>
+            
+
+        </div>
+
+    </section>
+
+    <!-- 訂購表單區 -->
+    <section class="order m-0-auto" id="order">
+        <h2>訂購表單</h2>
+        <form class="smoove" data-move-x="150%" data-rotate-y="90deg" action="" method="post" name="contact-form" id="contact-form" title="聯絡我們表單" style="opacity: 1; transition: 1s, opacity 1.5s;">
+            <label for="username">*姓名：</label>
+            <input class="glassmorphism" type="text" name="username" id="username" title="姓名欄位" required="" placeholder="請輸入姓名">
+
+            <label for="tel">電話：</label>
+            <input class="glassmorphism" type="tel" name="tel" id="tel" title="電話欄位" placeholder="例如：02-98765432">
+
+            <label for="email">*Email：</label>
+            <input class="glassmorphism" type="email" name="email" id="email" title="Email欄位" required="" placeholder="請輸入Email">
+            <!-- email允許用戶輸入多個值 -->
+
+            <label for="message">*訂購商品: </label>
+            <textarea class="glassmorphism" name="message" id="message" rows="5">請填寫訂購商品</textarea>
+            <!-- <small>此表單為練習作品，不具收集資料功能，不具有商業行為，非正式網站。</small> -->
+
+            <button class="glassmorphism" type="submit" name="contact-btn" id="contact-btn" title="送出按鈕">
+                <span>送出</span>
+            </button>
+            <!-- <input class="glassmorphism" type="submit" value="送出"> -->
+        </form>
+
+    </section>
+
+    <!-- 關於我們區 -->
+    <section id="about" class="about">
+        <h2>關於我們</h4>
+        <div class="container row">
+            <div class="col map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3645.956438378377!2d121.5927019!3d23.9619805!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34689f863f9afcc3%3A0x792166a064dd5d4d!2zOTcz6Iqx6JOu57ij5ZCJ5a6J6YSJ5p2x5rW35Y2B5Zub6KGXNzjomZ8x!5e0!3m2!1szh-TW!2stw!4v1727896220342!5m2!1szh-TW!2stw" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div class="col">
+                <div class="shop-name">
+                    <h1><img style="width: 150px;" src="./images/MEW logo.svg" alt=""></h1>
+                    <h1>艾妙咪</h1>
+                </div>
+                <div class="icons">
+                    <a href="https://www.facebook.com/profile.php?id=100063827892930"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="black" d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978c.401 0 .955.042 1.468.103a9 9 0 0 1 1.141.195v3.325a9 9 0 0 0-.653-.036a27 27 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.7 1.7 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103l-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647"/></svg></a>
+                    <a href="https://shopee.tw/i_mew_mee?categoryId=100629&entryPoint=ShopByPDP&itemId=26711214403"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="black" d="M15.941 17.963c.23-1.879-.98-3.077-4.175-4.097c-1.548-.528-2.277-1.22-2.26-2.171c.065-1.056 1.048-1.825 2.352-1.85a5.3 5.3 0 0 1 2.883.89c.116.072.197.06.263-.04c.09-.144.315-.493.39-.62c.051-.08.061-.186-.068-.28c-.185-.137-.704-.415-.983-.532a6.5 6.5 0 0 0-2.511-.514c-1.91.008-3.413 1.215-3.54 2.826q-.122 1.746 1.73 2.827c.263.152 1.68.716 2.244.892c1.774.552 2.695 1.542 2.478 2.697c-.197 1.047-1.299 1.724-2.818 1.744c-1.203-.046-2.287-.537-3.127-1.19l-.141-.11c-.104-.08-.218-.075-.287.03c-.05.077-.376.547-.458.67c-.077.108-.035.168.045.234c.35.293.817.613 1.134.775a6.7 6.7 0 0 0 2.829.727a4.9 4.9 0 0 0 2.075-.354c1.095-.465 1.803-1.394 1.945-2.554M12 1.401c-2.068 0-3.754 1.95-3.833 4.39h7.665C15.751 3.35 14.066 1.4 12 1.4m7.851 22.598l-.08.001l-15.784-.002c-1.074-.04-1.863-.91-1.971-1.991l-.01-.195l-.707-15.526a.46.46 0 0 1 .45-.494h4.975C6.845 2.568 9.16 0 12 0s5.153 2.569 5.275 5.79h4.968a.46.46 0 0 1 .458.483l-.773 15.588l-.007.131c-.094 1.094-.979 1.977-2.07 2.006"/></svg></a>
+                </div>
+                <br>
+                <div>
+                    <p>2015年的耶誕節，一位女孩認識一位來自俄羅斯的朋友，深受斯拉夫文化和森林的薰陶<br><br>品牌由兩位來自不同國家的女孩所討論，取自外國朋友和女孩的第一個字母M&E，結合她們對貓的喜愛，湊成「MEW」字，並與植物&貓有關聯的「艾」字(諧音)，「艾妙咪」就此誕生親自與當地製造商合作<br>
+                    價格最優惠，因為不用被轉手好幾筆每個月新鮮空運來台，大多採用當地的野生植物<br><br>秉持：天藍、天然、珍愛大自然<br><br>會不定期上架新商品&更新精油項目</p>
+                </div>
+                <br>
+                <p>地址：花蓮縣吉安鄉東昌村東海十四街７８號1樓<br>客服時間：週一至週五 09:00～18:00<br>統一編號：93424849</p>
+
+            </div>
+        </div>
+
+    </section>
+
+    <!-- 頁尾區 -->
+    <footer>
+        <small>艾妙咪網購企業社 | I MEW MEE Company | Copyright © 2024 All rights reserved.</small>
+    </footer>
+    <div id="goTop">
+        <i class="fa-solid fa-angle-up"></i>
+    </div>
+
+
+    <!-- bootstrap js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- JQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <!-- JQuery ui CDN tab 要放在JQuery CDN下面 -->
+    <script src="https://code.jquery.com/ui/1.13.3/jquery-ui.js"></script>
+    <!-- lightbox js -->
+    <script src="./js/lightbox.min.js"></script>
+    <!-- 換圖輪播 js -->
+    <script src="js/carousel.js"></script>
+    <!-- fontawsome js 靜態按鈕不需要-->
+    <!-- <script src="js/solid.min.js"></script> -->
+    <!-- jquery smoove cdn -->
+    <!-- 雙斜線是沒辦法連到的。要自己補上"https:" -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-smoove/0.2.10/jquery.smoove.min.js"></script>
+    <script>
+        // 請用jq smoove 及共用設定
+        $('.smoove').smoove({
+            offset : '40%'
+        });
+
+        // 透視載入
+        $('.smoove-z').smoove({
+            moveZ : '-500px',
+            rotateX : '90deg',
+            moveY : '100px'
+        });
+    </script>
+
+
+    <!-- 自訂的js 一定要最後執行，一定要放在最後面 -->
+    <script src="./js/script.js"></script>
+</body>
+</html>
