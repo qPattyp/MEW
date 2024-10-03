@@ -70,20 +70,39 @@ img {
 }
 /* 漢堡按鈕 */
 @media (min-width:641px){
-    .hamburger, #banner_m_01, #banner_m_02, #banner_m_03, #banner_m_04{
+    .hamburger {
         display: none;
+    }
+    .navbar>.container-fluid{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: unset;
+    }
+    .collapse:not(.show) {
+        display: flex;
+    }
+    .navbar-nav{
+        display: flex;
+        flex-direction: row;
+        width: 80%;
+        /* flex-basis: auto; */
     }
 }
 
+@media (max-width:920px) {
+    
+    #MEW-logo{
+        width: 140px;
+        align-items: center;
+    }
+    
+}
 @media (max-width:640px) {
     /* 手機版選單列樣式 */
 
     #MEW-logo{
         width: 100px;
         align-items: center;
-    }
-    #banner_01, #banner_02, #banner_03, #banner_04 {
-        display: none;
     }
     /* 漢堡選單 */
     .hamburger {
