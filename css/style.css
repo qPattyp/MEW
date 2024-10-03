@@ -336,7 +336,7 @@ h4 {
     background-color: transparent ;
     /* opacity: 1;*/
     margin: 1.5rem auto;
-    
+    outline: 1px solid #333;
 }
 #contact-btn span {
     color: #333;
